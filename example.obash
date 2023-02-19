@@ -1,0 +1,16 @@
+class Order {
+    article: string;
+    count: integer;
+    price: real;
+
+    def total(): real {
+        return this.count * this.price;
+    }
+}
+
+var order = new Order();
+order.article = "books";
+order.count = 3;
+order.price = 2.6;
+
+echo order.total(); # should print 7.8
