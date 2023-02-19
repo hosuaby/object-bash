@@ -4,13 +4,19 @@ class Order {
     price: real;
 
     def total(): real {
-        return this.count * this.price;
+        return this.count * this.price
+    }
+
+    def describe(customerName: string): string {
+        total=this.total()
+        return "Order of ${this.article} for ${customerName} for total price of ${total}"
     }
 }
 
-var order = new Order();
-order.article = "books";
-order.count = 3;
-order.price = 2.6;
+order=new Order()
+order.article="books"
+order.count=3
+order.price=2.6
 
-echo order.total(); # should print 7.8
+echo order.total()                      # should print '7.8'
+echo order.describe("Alexei KLENIN")    # should print 'Order of books for Alexei KLENIN for total price of 7.8'
